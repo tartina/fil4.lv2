@@ -509,6 +509,8 @@ fil4_restore(LV2_Handle                  instance,
 	uint32_t type;
 	uint32_t valflags;
 
+	if (handle == NULL) return LV2_STATE_ERR_UNKNOWN;
+
 	STATEREAD(s_dbscale, Float, float,   self->db_scale)
 	STATEREAD(s_fftgain, Float, float,   self->fft_gain)
 	STATEREAD(s_fftmode, Int,   int32_t, self->fft_mode)
